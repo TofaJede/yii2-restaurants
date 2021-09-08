@@ -21,8 +21,12 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'css/searchbox.css'
     ];
     public $js = [
+        'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+        'js/restaurants.js',
+        'js/searchbox.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

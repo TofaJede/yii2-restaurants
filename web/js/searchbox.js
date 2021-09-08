@@ -1,0 +1,28 @@
+let searchApiUrl = ''
+// get searched value
+$('#searchbox').on('input', () => {
+    let search = $('#searchbox').val();
+
+    if (search !== '') {
+        $('#suggestionbox').show().empty();
+    }
+
+    if (search === '') {
+        $('#suggestionbox').hide();
+    }
+
+    $.ajax({
+        method: "GET",
+        url: "index.php",
+        data: { r: "api", s: search}
+    })
+        .done((result) => {
+            let { data } = result;
+            $.each(data, (key, val) => {
+                $('#suggestionbox').append("<a href='/index.php?r=restaurant/detail&id=" + val.id + " '> " + val.name + "</a>");
+                console.log(val.name);
+            });
+            // show data in select
+            console.log(data)
+        });
+});

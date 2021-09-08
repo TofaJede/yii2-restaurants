@@ -40,6 +40,7 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Restaurants', 'url' => ['/restaurant/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -54,6 +55,14 @@ AppAsset::register($this);
             )
         ],
     ]);
+    ?>
+    <div id="search">
+        <input class="form-control" type="text" placeholder="Search" id="searchbox">
+        <div class="suggestionbox_content" id="suggestionbox">
+
+        </div>
+    </div>
+    <?php
     NavBar::end();
     ?>
 </header>
