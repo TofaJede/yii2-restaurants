@@ -1,5 +1,3 @@
-let searchApiUrl = ''
-// get searched value
 $('#searchbox').on('input', () => {
     let search = $('#searchbox').val();
 
@@ -18,11 +16,8 @@ $('#searchbox').on('input', () => {
     })
         .done((result) => {
             let { data } = result;
-            $.each(data, (key, val) => {
-                $('#suggestionbox').append("<a href='/index.php?r=restaurant/detail&id=" + val.id + " '> " + val.name + "</a>");
-                console.log(val.name);
+            $.each(data, (key, restaurant) => {
+                $('#suggestionbox').append("<a href='/index.php?r=restaurant/detail&id=" + restaurant.id + " '> " + restaurant.name + "</a>");
             });
-            // show data in select
-            console.log(data)
         });
 });
