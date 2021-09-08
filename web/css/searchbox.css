@@ -1,3 +1,8 @@
+#search {
+    display: block;
+    margin-left: 55%;
+}
+
 /* Dropdown Content (Hidden by Default) */
 #suggestionbox {
     display: none;
